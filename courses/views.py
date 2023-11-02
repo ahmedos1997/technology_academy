@@ -5,6 +5,8 @@ from django.contrib.sessions.models import Session
 from django.core.checks import translation
 from django.http import JsonResponse, HttpResponse, HttpResponseRedirect
 from django.shortcuts import render, redirect
+from django.urls import reverse
+from django.utils.translation import activate, gettext as _
 from django.views.generic import ListView, CreateView, UpdateView, DeleteView
 from. import models
 from .models import Course, Path, Comment, Replie, Subscriber
@@ -133,4 +135,10 @@ def SubscriberCreateView(request, id):
 def success(request):
     return render(request, 'page/success.html')
 
-
+def change_language(request):
+    if request.method == 'POST':
+        language = request.POST.get('language')
+        if language:
+            activate(language)
+            request.session['django_language'] = language
+    return HttpResponseRedirect(reverse('main'))

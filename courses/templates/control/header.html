@@ -15,15 +15,18 @@
           <li><a href="{% url 'my_path' %}" class="nav-link px-2 text-white">{% trans 'my path' %}</a></li>
           <li><a href="{% url 'blog_list' %}" class="nav-link px-2 text-white">{% trans 'Blog' %}</a></li>
 
-          <div class="dropdown">
-    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-        {% trans 'Choose the language' %}
-    </button>
-    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-        <li><a class="dropdown-item" href="#">{% trans 'Arabic' %}</a></li>
-        <li><a class="dropdown-item" href="#">{% trans 'English' %}</a></li>
-    </ul>
-</div>
+
+              <!-- language_selector.html -->
+
+<form action="{% url 'change_language' %}" method="post">
+  {% csrf_token %}
+  <select name="language">
+    <option value="en">{% trans 'English' %}</option>
+    <option value="ar">{% trans 'Arabic' %}</option>
+  </select>
+  <button type="submit">{% trans 'change language' %}</button>
+</form>
+
         </ul>
 
          {% if user.is_authenticated %}
