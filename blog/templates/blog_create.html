@@ -1,0 +1,21 @@
+{% extends 'control/base.html' %}
+<!DOCTYPE html>
+{% load i18n %}
+{% block content %}
+
+
+        <div class="mb-3">
+        <form class="row g-0" method="post">
+        {% csrf_token %}
+            {% include 'control/form.html' with form=form %}
+
+        <input type="submit" value="{% trans 'Create' %}" class="btn btn-sm btn-outline-success mx-1" >
+
+        </form>
+        </div>
+
+
+
+
+{% endblock %}
+

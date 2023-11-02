@@ -1,0 +1,72 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-11-02 10:10+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 "
+"&& n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5;\n"
+#: .\blog\forms.py:12 .\blog\forms.py:28
+msgid "title"
+msgstr "العنوان"
+
+#: .\blog\forms.py:13 .\blog\forms.py:29
+msgid "body"
+msgstr "المقالة"
+
+#: .\blog\templates\blog_create.html:12
+msgid "Create"
+msgstr "انشاء"
+
+#: .\blog\templates\blog_delete.html:4
+msgid "Alart"
+msgstr "تنبيه"
+
+#: .\blog\templates\blog_delete.html:8
+msgid "are you sure to Delete"
+msgstr "هل انت متاكد من عملية الحذف"
+
+#: .\blog\templates\blog_delete.html:11
+msgid "Delete"
+msgstr "حذف"
+
+#: .\blog\templates\blog_list.html:14
+msgid "Create Blog"
+msgstr "انشاء مقالة"
+
+#: .\blog\templates\blog_list.html:16
+msgid "Blogs"
+msgstr "المقالات"
+
+#: .\blog\templates\blog_list.html:21
+msgid "Blog: "
+msgstr "مقالة"
+
+#: .\blog\templates\blog_list.html:33
+msgid "Sorry, There Are No Blogs To Display "
+msgstr "ناسف لا توجد مدونات لعرضها"
+
+#: .\blog\templates\blog_list.html:42 .\blog\templates\blog_update.html:19
+#: .\blog\templates\blog_view.html:36
+msgid "Please log in or create an account to view the page"
+msgstr "ارجاء تسجيل الدخول او انشاء حساب لتظهر هذه الصفحة"
+
+#: .\blog\templates\blog_update.html:12
+msgid "Update"
+msgstr "تعديل"
+
+#: .\blog\templates\blog_view.html:7
+msgid "Blog Details"
+msgstr "تفاصيل المقالة"

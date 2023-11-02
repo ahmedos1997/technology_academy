@@ -1,0 +1,9 @@
+<!-- comment_view.html -->
+<h1>Comments</h1>
+<ul>
+  {% for comment in comments %}
+    <li>{{ comment.title }}</li>
+  {% empty %}
+    <li>No comments available.</li>
+  {% endfor %}
+</ul>

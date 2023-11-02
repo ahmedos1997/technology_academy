@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load i18n %}
+
+<header class="p-3 bg-dark text-white">
+    <div class="container">
+      <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
+        <a href="/" class="d-flex align-items-center mb-2 mb-lg-0 text-white text-decoration-none">
+          <svg class="bi me-2" width="40" height="32" role="img" aria-label="Bootstrap"><use xlink:href="#bootstrap"></use></svg>
+        </a>
+
+        <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
+            <h6>{% trans 'Technology Academy' %}</h6>
+          <li><a href="{% url 'main' %}" class="nav-link px-2 text-secondary">{% trans 'Home' %}</a></li>
+          <li><a href="{% url 'my_path' %}" class="nav-link px-2 text-white">{% trans 'my path' %}</a></li>
+          <li><a href="{% url 'blog_list' %}" class="nav-link px-2 text-white">{% trans 'Blog' %}</a></li>
+
+          <div class="dropdown">
+    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+        {% trans 'Choose the language' %}
+    </button>
+    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+        <li><a class="dropdown-item" href="#">{% trans 'Arabic' %}</a></li>
+        <li><a class="dropdown-item" href="#">{% trans 'English' %}</a></li>
+    </ul>
+</div>
+        </ul>
+
+         {% if user.is_authenticated %}
+            <ul class="navbar-nav mb-2 mb-lg-0 me-3">
+                <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                      {{ user.username }}
+                  </a>
+                  <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <li><a class="dropdown-item" href="{% url 'profile' %}">{% trans 'Profile' %}</a></li>
+                    <li><hr class="dropdown-divider"></li>
+                    <li><a class="dropdown-item" href="{% url 'logout' %}">{% trans 'Logout' %}</a></li>
+                  </ul>
+                </li>
+
+              </ul>
+
+        {% else %}
+         <ul class="navbar-nav mb-2 mb-lg-0 me-3">
+                <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                      {{ user.username }}
+                  </a>
+
+                </li>
+              </ul>
+
+        <div class="text-end">
+          <a href="{% url 'login' %}"  class="btn btn-outline-light me-2">{% trans 'Login' %}</a>
+          <a href="{% url 'register' %}"  class="btn btn-warning">{% trans 'Register' %}</a>
+        </div>
+        {% endif %}
+
+
+
+
+
+
+      </div>
+    </div>
+  </header>
+</html>

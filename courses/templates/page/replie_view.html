@@ -1,0 +1,41 @@
+{% extends 'control/base.html' %}
+{% load i18n %}
+{% block content %}
+{% if user.is_authenticated %}
+
+<div class="container mt-4">
+  <div class="row">
+    <div class="col-md-8"> <!-- استخدمت عمودًا بحجم 8 من 12 بواسطة bootstrap -->
+        <h3 class="card-title">{{ comment.title }}</h3>
+        {% for replie in comment.get_replies %}
+            <div class="card mb-3">
+                <div class="card-body">
+
+                    <p class="card-text">{{ replie.title }}</p>
+                    {{ replie.user.username }}
+                </div>
+            </div>
+        {% empty %}
+            <div class="card mb-3">
+                <div class="card-body">
+
+                    <p class="card-text">{% trans 'No Answer Yet' %}</p>
+                </div>
+            </div>
+        {% endfor %}
+
+        <!-- نموذج الإرسال -->
+        <form method="post">
+            {% csrf_token %}
+            {% include 'control/form.html' with form=form %}
+            <button  type="submit" class="btn btn-primary ">{% trans 'Answer The Question' %}</button>
+        </form>
+     </div>
+    </div>
+</div>
+{% else %}
+      <div class="alert alert-info mt-4">
+          {% trans 'Please log in or create an account to view the page' %}
+      </div>
+      {% endif %}
+{% endblock %}

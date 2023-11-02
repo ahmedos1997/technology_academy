@@ -1,0 +1,38 @@
+{% extends 'control/base.html' %}
+{% load i18n %}
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>{% trans 'Blog Details' %}</title>
+    <meta charset="UTF-8">
+    <style>
+        h1 {
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        h2 {
+            font-size: 18px;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+{% if user.is_authenticated %}
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <h1>{{ blog.title }}</h1>
+                <h2>{{ blog.body }}</h2>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+{% else %}
+      <div class="alert alert-info mt-4">
+          {% trans 'Please log in or create an account to view the page' %}
+      </div>
+      {% endif %}{% endblock %}

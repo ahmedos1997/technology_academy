@@ -1,0 +1,44 @@
+{% extends 'control/base.html' %}
+{% load i18n %}
+{% block content %}
+{% if user.is_authenticated %}
+
+<div class="container mb-3">
+  <div class="row">
+    <div class="col-md-8"> <!-- استخدمت عمودًا بحجم 8 من 12 بواسطة bootstrap -->
+      <h1>{{ path.course }}</h1>
+      <h2>{{ path.title }}</h2>
+      <div class="card mb-4">
+        <div class="card-body">
+          <video controls class="w-100" controlsList="nodownload">
+            <source src="{{ path.video.url }}" type="video/mp4" />
+          </video>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+  {% for comment in path.get_comments %}
+    <div class="comment">
+        <h3>{{ comment.title }}</h3>
+        <a class="btn btn-primary" href="{% url 'replie_view' comment.id  %}">{% trans 'Show Response' %}</a>
+    </div>
+{% empty %}
+    <p>{% trans 'No Response Yet' %}</p>
+{% endfor %}
+
+<!-- نموذج الإرسال -->
+<div class="mb-3">
+<form class="row g-0" method="post">
+    {% csrf_token %}
+        {% include 'control/form.html' with form=form %}
+    <button type="submit" class="btn btn-primary">{% trans 'Add Quetchion' %}</button>
+</form>
+</div>
+{% else %}
+      <div class="alert alert-info mt-4">
+          {% trans 'Sorry You Must Login Or Create Account' %}
+      </div>
+      {% endif %}
+{% endblock %}
+

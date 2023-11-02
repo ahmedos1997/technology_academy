@@ -1,0 +1,143 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-11-02 10:10+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 "
+"&& n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5;\n"
+#: .\courses\forms.py:22 .\courses\forms.py:38
+msgid "title"
+msgstr ""
+
+#: .\courses\forms.py:50
+msgid "name"
+msgstr "الاسم"
+
+#: .\courses\templates\control\base.html:5
+#: .\courses\templates\control\header.html:13
+msgid "Technology Academy"
+msgstr "اكادمية التقانة"
+
+#: .\courses\templates\control\footer.html:5
+msgid "(c) 2022 tecnology. All Right reserved."
+msgstr "الحقوق محفوظة للاكادمية (c) 2022"
+
+#: .\courses\templates\control\header.html:14
+msgid "Home"
+msgstr "الرئيسية"
+
+#: .\courses\templates\control\header.html:15
+msgid "my path"
+msgstr "مساراتي"
+
+#: .\courses\templates\control\header.html:16
+msgid "Blog"
+msgstr "المدونات"
+
+#: .\courses\templates\control\header.html:20
+msgid "Choose the language"
+msgstr "اختر اللغة"
+
+#: .\courses\templates\control\header.html:23
+msgid "Arabic"
+msgstr "اللغة العربية"
+
+#: .\courses\templates\control\header.html:24
+msgid "English"
+msgstr "اللغة الانجليزية"
+
+#: .\courses\templates\control\header.html:36
+msgid "Profile"
+msgstr "الصفحة الشخصية"
+
+#: .\courses\templates\control\header.html:38
+msgid "Logout"
+msgstr "تسجيل خروج"
+
+#: .\courses\templates\control\header.html:55
+msgid "Login"
+msgstr "تسجيل الدخول"
+
+#: .\courses\templates\control\header.html:56
+msgid "Register"
+msgstr "انشاء حساب"
+
+#: .\courses\templates\page\main.html:12
+msgid "Course :"
+msgstr "كورس"
+
+#: .\courses\templates\page\main.html:13
+msgid "Price : "
+msgstr "السعر"
+
+#: .\courses\templates\page\main.html:16
+msgid "Subscribed"
+msgstr "تم الاشتراك"
+
+#: .\courses\templates\page\main.html:18 .\courses\templates\page\subscribe
+#: .html:17
+msgid "Subscribe"
+msgstr "اشتراك"
+
+#: .\courses\templates\page\my_path.html:5
+msgid "My path"
+msgstr "مساراتي"
+
+#: .\courses\templates\page\my_path.html:24
+msgid "There Are No Path To Show"
+msgstr "لا يوجد لعرضه"
+
+#: .\courses\templates\page\my_path.html:34
+#: .\courses\templates\page\replie_view.html:38
+#: .\courses\templates\page\subscribe .html:31
+msgid "Please log in or create an account to view the page"
+msgstr "ارجاء تسجيل الدخول او انشاء حساب لتظهر هذه الصفحة"
+
+#: .\courses\templates\page\path_view.html:24
+msgid "Show Response"
+msgstr "اظهار الرد"
+
+#: .\courses\templates\page\path_view.html:27
+msgid "No Response Yet"
+msgstr "لايوجد رد حتى الان"
+
+#: .\courses\templates\page\path_view.html:35
+msgid "Add Quetchion"
+msgstr "اضافة سؤال"
+
+#: .\courses\templates\page\path_view.html:40
+msgid "Sorry You Must Login Or Create Account"
+msgstr "ارجاء تسجيل الدخول او انشاء حساب لتظهر هذه الصفحة"
+
+#: .\courses\templates\page\replie_view.html:22
+msgid "No Answer Yet"
+msgstr "عفوا لا توجد اجابة بعد"
+
+#: .\courses\templates\page\replie_view.html:31
+msgid "Answer The Question"
+msgstr "اجب عن السؤال"
+
+#: .\courses\templates\page\subscribe .html:10
+msgid "Subscribe In"
+msgstr "الاشتراك في"
+
+#: .\courses\templates\page\success.html:10
+msgid "You Have Been Subscribe In Our Courses Wi Will Be with You Eny Time"
+msgstr "لقد تم اشتراكك في الكورس الخاص بنا سنكون معك دائما"
+
+#: .\courses\templates\page\success.html:15
+msgid "Show My path"
+msgstr "الذهاب الى مساراتي"

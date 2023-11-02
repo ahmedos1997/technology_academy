@@ -1,0 +1,37 @@
+{% extends 'control/base.html' %}
+{% load i18n %}
+
+{% block content %}
+            <h1>{% trans 'My path' %}</h1>
+
+{% if user.is_authenticated %}
+<div class="container mt-4">
+  <div class="row">
+    <div class="col-md-4 mb-4">
+      <div class="card">
+        <div class="card-body">
+          {% for course in courses %}
+            <h5 class="card-title">{{ course.title }}</h5>
+            {% for path in paths %}
+              {% if path.course == course %}
+                <p class="card-text">
+                  <a href="{% url 'path_view' path.id %}" style="color:purple; text-decoration: none; font-weight: bold;">
+                    {{ path }} </a>
+                </p>
+              {% endif %}
+            {% empty %}
+              <li>ليس لديك مسارات مشترك فيها حاليًا.</li>
+              {% trans 'There Are No Path To Show' %}
+            {% endfor %}
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% else %}
+      <div class="alert alert-info mt-4">
+          {% trans 'Please log in or create an account to view the page' %}
+      </div>
+      {% endif %}
+{% endblock %}

@@ -1,0 +1,19 @@
+{% extends 'control/base.html' %}
+
+{% load i18n %}
+{% block content %}
+      <div class="container my-5">
+        <div class="row bd-highlight">
+          <div class="col-md-12">
+            <h4 class="my-3 text-center">
+              <div class="alert alert-success py-3">
+                <h3 class="text-center">{% trans 'You Have Been Subscribe In Our Courses Wi Will Be with You Eny Time' %}</h3>
+              </div>
+            </h4>
+          </div>
+          <a href="{% url 'my_path' %}" class="btn btn-success">
+            {% trans 'Show My path' %}
+            </a>
+        </div>
+      </div>
+{% endblock %}
