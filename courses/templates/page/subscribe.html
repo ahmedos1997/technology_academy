@@ -8,24 +8,21 @@
             <div class="card col-md-6 px-0">
                 <div class="card-header">
                     <h3 class="mb-0 py-2"> {% trans 'Subscribe In' %} {{ course.title }}</h3>
+                    <h3 class="mb-0 py-2"> {% trans 'Price : ' %} {{ course.price }}</h3>
+                    <h3 class="mb-0 py-2"> {% trans 'User Name : ' %} {{ user.username }}</h3>
+                    <h3 class="mb-0 py-2"> {% trans 'User Email : ' %} {{ user.email }}</h3>
                         </div>
                         <div class="card-body">
                             <form method="post">
-                                {% include 'control/form.html' with form=form %}
                                 {% csrf_token %}
                                 <button class="btn btn-success">
                                     {% trans 'Subscribe' %}
                                 </button>
                             </form>
-
                 </div>
-
             </div>
-
         </div>
-
     </div>
-
 {% else %}
       <div class="alert alert-info mt-4">
           {% trans 'Please log in or create an account to view the page' %}

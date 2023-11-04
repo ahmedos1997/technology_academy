@@ -12,6 +12,8 @@ from. import models
 from .models import Course, Path, Comment, Replie, Subscriber
 from . import forms
 from django.contrib.auth.decorators import login_required
+from django.core.mail import send_mail
+from django.template.loader import render_to_string
 
 from.forms import CommentCreateForm,ReplieCreateForm,SubscriberForm
 from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
@@ -107,28 +109,10 @@ def ReplieCreateView(request, id):
     }
     return render(request, 'page/replie_view.html', context)
 
-################### stripe and payment#############################
+################### stripe and payment and mail#############################
 
-def SubscriberCreateView(request, id):
-    course = Course.objects.get(id=id)
-    user = request.user
-    form = forms.SubscriberForm(request.POST)
-    if request.method == 'POST':
-        if form.is_valid():
-            subsc = form.save(commit=False)
-            subsc.course = course
-            subsc.email = user.email
-            subsc.price = course.price
-            subsc.user = user
-            subsc.save()
-        form.save()
-        return redirect('success')
-    context = {
-        'course': course,
-        'user': user,
-        'form': form
-    }
-    return render(request, 'page/subscribe .html', context)
+
+
 
 
 
@@ -142,3 +126,48 @@ def change_language(request):
             activate(language)
             request.session['django_language'] = language
     return HttpResponseRedirect(reverse('main'))
+
+
+def send_order_mail(request, course):
+    user = request.user
+    msg_html = render_to_string('page/email.html',{
+        'course':course,
+        'user':user
+    })
+    recipient_list = request.user.email
+    send_mail(
+        subject='new order',
+        html_message=msg_html,
+        message=msg_html,
+        from_email= 'example@example.com',
+        recipient_list= [recipient_list]
+    )
+
+def Subscribe(request, id):
+    user = request.user
+    course = Course.objects.get(id=id)
+    if request.method == 'POST':
+        send_order_mail(request, course)
+        return redirect('success')
+    return render(request, 'page/subscribe.html', {'course':course,'user':user})
+
+# def SubscriberCreateView(request, id):
+#     course = Course.objects.get(id=id)
+#     user = request.user
+#     form = forms.SubscriberForm(request.POST)
+#     if request.method == 'POST':
+#         if form.is_valid():
+#             subsc = form.save(commit=False)
+#             subsc.course = course
+#             subsc.email = user.email
+#             subsc.price = course.price
+#             subsc.user = user
+#             subsc.save()
+#         form.save()
+#         return redirect('success')
+#     context = {
+#         'course': course,
+#         'user': user,
+#         'form': form
+#     }
+#     return render(request, 'page/subscribe.html', context)

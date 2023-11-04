@@ -9,7 +9,7 @@ urlpatterns = [
     path('my_path', views.My_path, name='my_path'),
     path('path_view/<int:id>', views.PathView, name='path_view'),
     path('replie_view/<int:id>', views.ReplieCreateView, name='replie_view'),
-    path('subscribe/<int:id>', views.SubscriberCreateView, name='subscribe'),
+    path('subscribe/<int:id>', views.Subscribe, name='subscribe'),
     path('success', views.success, name='success'),
     path('change-language/', views.change_language, name='change_language'),
 

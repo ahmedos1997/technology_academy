@@ -29,7 +29,7 @@ class BlogUpdateView(LoginRequiredMixin,UpdateView):
         form.instance.user = self.request.user
         return super().form_valid(form)
 
-class BlogDeleteView(DeleteView):
+class BlogDeleteView(LoginRequiredMixin,DeleteView):
     model = models.Blog
     template_name = 'blog_delete.html'
     success_url = reverse_lazy('blog_list')

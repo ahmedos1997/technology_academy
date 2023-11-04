@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-11-02 12:33+0200\n"
+"POT-Creation-Date: 2023-11-03 23:34+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -78,11 +78,46 @@ msgstr "تسجيل الدخول"
 msgid "Register"
 msgstr "انشاء حساب"
 
+#: .\courses\templates\page\email.html:40
+#, fuzzy
+#| msgid "Subscribe In"
+msgid "subscribe in course"
+msgstr "الاشتراك في"
+
+#: .\courses\templates\page\email.html:50
+msgid "client id :"
+msgstr " رقم الزبون "
+
+#: .\courses\templates\page\email.html:64
+msgid "client name : "
+msgstr " اسم الزبون "
+
+#: .\courses\templates\page\email.html:78
+msgid "client email : "
+msgstr " ايميل الزبون "
+
+#: .\courses\templates\page\email.html:92
+msgid "date : "
+msgstr "التاريخ "
+
+#: .\courses\templates\page\email.html:132
+#, fuzzy
+#| msgid "Course :"
+msgid "course name : "
+msgstr "كورس"
+
+#: .\courses\templates\page\email.html:143
+#, fuzzy
+#| msgid "Price : "
+msgid "course price : "
+msgstr "السعر"
+
 #: .\courses\templates\page\main.html:12
 msgid "Course :"
 msgstr "كورس"
 
 #: .\courses\templates\page\main.html:13
+#: .\courses\templates\page\subscribe.html:11
 msgid "Price : "
 msgstr "السعر"
 
@@ -90,8 +125,8 @@ msgstr "السعر"
 msgid "Subscribed"
 msgstr "تم الاشتراك"
 
-#: .\courses\templates\page\main.html:18 .\courses\templates\page\subscribe
-#: .html:17
+#: .\courses\templates\page\main.html:18
+#: .\courses\templates\page\subscribe.html:19
 msgid "Subscribe"
 msgstr "اشتراك"
 
@@ -101,11 +136,11 @@ msgstr "مساراتي"
 
 #: .\courses\templates\page\my_path.html:24
 msgid "There Are No Path To Show"
-msgstr "لا يوجد لعرضه"
+msgstr "لا يوجد مسار لعرضه"
 
 #: .\courses\templates\page\my_path.html:34
 #: .\courses\templates\page\replie_view.html:38
-#: .\courses\templates\page\subscribe .html:31
+#: .\courses\templates\page\subscribe.html:28
 msgid "Please log in or create an account to view the page"
 msgstr "ارجاء تسجيل الدخول او انشاء حساب لتظهر هذه الصفحة"
 
@@ -133,14 +168,28 @@ msgstr "عفوا لا توجد اجابة بعد"
 msgid "Answer The Question"
 msgstr "اجب عن السؤال"
 
-#: .\courses\templates\page\subscribe .html:10
+#: .\courses\templates\page\subscribe.html:10
 msgid "Subscribe In"
 msgstr "الاشتراك في"
 
+#: .\courses\templates\page\subscribe.html:12
+msgid "User Name : "
+msgstr " اسم المستخدم "
+
+#: .\courses\templates\page\subscribe.html:13
+msgid "User Email : "
+msgstr " ايميل المستخدم "
+
 #: .\courses\templates\page\success.html:10
-msgid "You Have Been Subscribe In Our Courses Wi Will Be with You Eny Time"
-msgstr "لقد تم اشتراكك في الكورس الخاص بنا سنكون معك دائما"
+msgid "Your request has been sent successfully. We will contact you via email"
+msgstr "تم ارسال طلبك بنجاح سيتم التواصل معك عن طريق الايميل"
 
 #: .\courses\templates\page\success.html:15
-msgid "Show My path"
-msgstr "الذهاب الى مساراتي"
+msgid "main page"
+msgstr " الصفحة الرئيسية "
+
+#~ msgid "You Have Been Subscribe In Our Courses Wi Will Be with You Eny Time"
+#~ msgstr "لقد تم اشتراكك في الكورس الخاص بنا سنكون معك دائما"
+
+#~ msgid "Show My path"
+#~ msgstr "الذهاب الى مساراتي"
