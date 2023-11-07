@@ -117,7 +117,7 @@ msgid "Course :"
 msgstr "كورس"
 
 #: .\courses\templates\page\main.html:13
-#: .\courses\templates\page\subscribe.html:11
+#: .\courses\templates\page\checkout.html:11
 msgid "Price : "
 msgstr "السعر"
 
@@ -126,7 +126,7 @@ msgid "Subscribed"
 msgstr "تم الاشتراك"
 
 #: .\courses\templates\page\main.html:18
-#: .\courses\templates\page\subscribe.html:19
+#: .\courses\templates\page\checkout.html:19
 msgid "Subscribe"
 msgstr "اشتراك"
 
@@ -140,7 +140,7 @@ msgstr "لا يوجد مسار لعرضه"
 
 #: .\courses\templates\page\my_path.html:34
 #: .\courses\templates\page\replie_view.html:38
-#: .\courses\templates\page\subscribe.html:28
+#: .\courses\templates\page\checkout.html:28
 msgid "Please log in or create an account to view the page"
 msgstr "ارجاء تسجيل الدخول او انشاء حساب لتظهر هذه الصفحة"
 
@@ -168,15 +168,15 @@ msgstr "عفوا لا توجد اجابة بعد"
 msgid "Answer The Question"
 msgstr "اجب عن السؤال"
 
-#: .\courses\templates\page\subscribe.html:10
+#: .\courses\templates\page\checkout.html:10
 msgid "Subscribe In"
 msgstr "الاشتراك في"
 
-#: .\courses\templates\page\subscribe.html:12
+#: .\courses\templates\page\checkout.html:12
 msgid "User Name : "
 msgstr " اسم المستخدم "
 
-#: .\courses\templates\page\subscribe.html:13
+#: .\courses\templates\page\checkout.html:13
 msgid "User Email : "
 msgstr " ايميل المستخدم "
 

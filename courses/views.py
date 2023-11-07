@@ -1,5 +1,4 @@
 import math
-from typing import re
 
 from django.contrib.sessions.models import Session
 from django.core.checks import translation
@@ -8,14 +7,16 @@ from django.shortcuts import render, redirect
 from django.urls import reverse
 from django.utils.translation import activate, gettext as _
 from django.views.generic import ListView, CreateView, UpdateView, DeleteView
+from paypal.standard.forms import PayPalPaymentsForm
+
 from. import models
-from .models import Course, Path, Comment, Replie, Subscriber
+from .models import Course, Path, Comment, Replie, Subscriber, Transaction, PaymentMethod
 from . import forms
 from django.contrib.auth.decorators import login_required
 from django.core.mail import send_mail
 from django.template.loader import render_to_string
 
-from.forms import CommentCreateForm,ReplieCreateForm,SubscriberForm
+from .forms import CommentCreateForm, ReplieCreateForm, SubscriberForm, UserInfoForm
 from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 
 from django.views import View
@@ -149,7 +150,88 @@ def Subscribe(request, id):
     if request.method == 'POST':
         send_order_mail(request, course)
         return redirect('success')
-    return render(request, 'page/subscribe.html', {'course':course,'user':user})
+    return render(request, 'page/checkout.html', {'course':course,'user':user})
+######################### stripe ######################################
+
+def stripe_config(request):
+    return JsonResponse({
+        'public_key': settings.STRIPE_PUBLISHABLE_KEY
+    })
+
+
+def stripe_transaction(request):
+    transaction = make_transaction(request, PaymentMethod.stripe)
+    if not transaction:
+        return JsonResponse({
+            'message': _('please enter valid information.')
+        }, status=400)
+    stripe.api_key = settings.STRIPE_SECRET_KEY
+    intent = stripe.PaymentIntent.create(
+        amount=transaction.amount * 100,
+        currency=settings.CURRENCY,
+        payment_method_types=['card'],
+        metadata={
+            'transaction': transaction.id
+        }
+    )
+    return JsonResponse({
+        'client_secret': intent['client_secret']
+    })
+
+
+
+def paypal_transaction(request):
+    transaction = make_transaction(request, PaymentMethod.paypal)
+    if not transaction:
+        return JsonResponse({
+            'message': _('please enter valid information.')
+        }, status=400)
+
+    form = PayPalPaymentsForm(initial={
+        'business': settings.PAYPAL_EMAIL,
+        'amount': transaction.amount,
+        'invoice': transaction.id,
+        'currency_code': settings.CURRENCY,
+        'return_url': f'http://{request.get_host()}{reverse("store.checkout_complete")}',
+        'cancel_url': f'http://{request.get_host()}{reverse("store.checkout")}',
+        'notify_url': f'http://{request.get_host()}{reverse("checkout.paypal-webhook")}',
+
+
+    })
+    return HttpResponse(form.render())
+
+
+
+def make_transaction(request, pm):
+
+    form = UserInfoForm(request.POST)
+    if form.is_valid():
+        course = Course.objects.filter(id=id)
+
+
+        return Transaction.objects.create(
+            customer=form.cleaned_data,
+            session=request.session.session_key,
+            payment_method=pm,
+            items=course.title,
+            amount=math.ceil(course.price))
+
+
+def send_order_email(order, products):
+    msg_html = render_to_string('emails/order.html', {
+        'order': order,
+        'products': products
+
+    })
+    send_mail(
+        subject='New order',
+        html_message=msg_html,
+        message=msg_html,
+        from_email='ahmed@example.com',
+        recipient_list=[order.customer['email']]
+
+
+    )
 
 # def SubscriberCreateView(request, id):
 #     course = Course.objects.get(id=id)
@@ -170,4 +252,4 @@ def Subscribe(request, id):
 #         'user': user,
 #         'form': form
 #     }
-#     return render(request, 'page/subscribe.html', context)
+#     return render(request, 'page/checkout.html', context)
