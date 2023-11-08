@@ -40,20 +40,3 @@ class ReplieCreateForm(forms.ModelForm):
         widgets = {
             'title': forms.TextInput(),
         }
-
-
-class SubscriberForm(forms.ModelForm):
-    class Meta:
-        model = models.Subscriber
-        fields = ['name']
-        labels = {
-            'name': _('name'),
-        }
-        widgets = {
-            'name': forms.TextInput(attrs=attrs),
-        }
-
-class UserInfoForm(forms.Form):
-    first_name = forms.CharField(max_length=100)
-    last_name = forms.CharField(max_length=100)
-    email = forms.EmailField()

@@ -25,7 +25,9 @@ SECRET_KEY = 'django-insecure-ss-mk-wxquf9ofmtbjim#tg#+uoy2yoms3*5yb36u$7#c#qun#
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+    'technology-academy-learn-5234b91c22ce.herokuapp.com/', '127.0.0.1'
+]
 
 
 # Application definition
@@ -45,6 +47,7 @@ INSTALLED_APPS = [
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware'
     # 'django.middleware.locale.LocaleMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -81,11 +84,11 @@ DATABASES = {
     'default': {
 
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'dj_technology_academy',
-        'USER': 'postgres',
-        'PASSWORD': 'admin',
-        'HOST': 'localhost',
-        'PORT': ''
+        'NAME': 'db8vbt7fk1bb0f',
+        'HOST': 'ec2-34-250-252-161.eu-west-1.compute.amazonaws.com',
+        'USER': 'svxntrqjmgsujs',
+        'PASSWORD': 'f37752068aee5086e088babebc209c7be6cf020589444cd02d763a706ec88990',
+        'PORT': '5432'
     }
 
    }
@@ -136,7 +139,7 @@ MEDIA_ROOT = 'media/'
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
 
 STATIC_URL = 'static/'
-STATICFILES_DIRS = [BASE_DIR/'static']
+STATICFILES_DIRS = [os.path.join(BASE_DIR/'static')]
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 
@@ -152,6 +155,7 @@ STRIPE_PUBLISHABLE_KEY='pk_test_51NNHJNJzhVpZanOUx6KG5yWxRdjzBlGSE6sgiCqkuHwtSxY
 STRIPE_SECRET_KEY='sk_test_51NNHJNJzhVpZanOU4HMMYVti0YAqEwHEtG5NwP9b9nHiFkPpyyohpapDXDxMWF1NupEWhldFp01LHWWo4f4yuYYY000CYIjFkz'
 CURRENCY = 'USD'
 
+BASE_URL = 'http://127.0.0.1:8000'
 
 EMAIL_HOST = 'sandbox.smtp.mailtrap.io'
 EMAIL_HOST_USER = 'b3ce6c40823d27'

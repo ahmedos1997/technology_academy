@@ -10,7 +10,7 @@ async function createStripeSession() {
 
   stripeSubmit.disabled = true;
   try {
-    const { data } = await axios.post("/checkout/stripe", formData)
+    const { data } = await axios.post("checkout/stripe", formData)
     const { client_secret } = data;
 
     const appearance = { theme: 'flat' };
@@ -71,7 +71,7 @@ async function _checkStripePaymentStatus() {
 }
 
 async function _stripeInit() {
-    const { data } = await axios("/checkout/stripe/config");
+    const { data } = await axios("checkout/stripe/config");
     stripe = Stripe(data.public_key, { locale: 'ar' });
     _checkStripePaymentStatus();
 }

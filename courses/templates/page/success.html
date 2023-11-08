@@ -2,18 +2,28 @@
 
 {% load i18n %}
 {% block content %}
+<body>
+    {% if user.is_authenticated %}
+
       <div class="container my-5">
         <div class="row bd-highlight">
           <div class="col-md-12">
             <h4 class="my-3 text-center">
               <div class="alert alert-success py-3">
-                <h3 class="text-center">{% trans 'Your request has been sent successfully. We will contact you via email' %}</h3>
+                <h3 class="text-center">{% trans 'You have successfully subscribed to the course. You can now watch the course and we will be with you at any time' %}</h3>
               </div>
             </h4>
           </div>
-          <a href="{% url 'main' %}" class="btn btn-success">
-            {% trans 'main page' %}
+          <a href="{% url 'my_path' %}" class="btn btn-success">
+            {% trans 'Go to courses' %}
             </a>
         </div>
       </div>
+    </body>
+  {% else %}
+      <div class="alert alert-info mt-4">
+          {% trans 'Please log in or create an account to view the page' %}
+      </div>
+   {% endif %}
+
 {% endblock %}

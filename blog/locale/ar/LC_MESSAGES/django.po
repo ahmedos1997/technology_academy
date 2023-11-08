@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-11-03 23:34+0200\n"
+"POT-Creation-Date: 2023-11-08 22:55+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -54,6 +54,10 @@ msgstr "انشاء مقالة"
 #: .\blog\templates\blog_list.html:22
 msgid "Blog: "
 msgstr "مقالة"
+
+#: .\blog\templates\blog_list.html:26
+msgid "edit"
+msgstr "تعديل"
 
 #: .\blog\templates\blog_list.html:34
 msgid "Sorry, There Are No Blogs To Display "

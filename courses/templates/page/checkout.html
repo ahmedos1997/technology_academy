@@ -1,108 +1,46 @@
-{% extends 'control/base.html'%}
+{% extends 'control/base.html' %}
 {% load i18n %}
 {% block content %}
-      <div class="container my-5">
+        {% if user.is_authenticated %}
+
+     <h1>{% trans 'payment page' %}</h1>
+    <section class="payment-form-container">
+
+        <div class="payment-form-header">
+           <div class="container my-5">
         <div class="row bd-highlight">
           <div class="col-md-12">
-            <h4 class="my-3 text-center">
+            <h4 class="my-3 text-left">
               <div class="alert alert-success py-3">
-                <h3 class="text-center">{{ course.title }}</h3>
-                <h3 class="text-center">{% trans 'Amount to pay' %}</h3>
-                <h3 class="text-center">{{ course.price }}</h3>
-              </div>
-            </h4>
-          </div>
-          <div class="col-12">
-            <h4 class="my-3">{% trans 'your information' %}</h4>
-            <div class="card">
-              <div class="card-body">
-                <form id="form-user-info" >
-                    {% csrf_token %}
-                  <div class="row">
-                    <div class="col-md-6">
-                      <div class="mb-3">
-                        <label for="firstNameInput" class="form-label"
-                          >{% trans 'first name' %}</label
-                        >
-                        <input
-                          type="text"
-                          class="form-control"
-                          id="firstNameInput"
-                          name="first_name"
-                          required
-                        />
-                      </div>
-                    </div>
-                    <div class="col-md-6">
-                      <div class="mb-3">
-                        <label for="lastNameInput" class="form-label"
-                          >{% trans 'last name' %}</label
-                        >
-                        <input
-                          type="text"
-                          class="form-control"
-                          id="lastNameInput"
-                          name="last_name"
-                          required
-                        />
-                      </div>
-                    </div>
-                  </div>
-                  <div class="mb-3">
-                    <label for="emailInput" class="form-label"
-                      >{% trans 'Email' %}</label
-                    >
-                    <input
-                      type="email"
-                      class="form-control"
-                      id="emailInput"
-                      name="email"
-                      required
-                    />
-                  </div>
+                <h1 class="payment-form-title" style="color: brown;">{% trans 'Course registration information : ' %}</h1>
+                  <h3 class="payment-form-card-title">{% trans 'name : ' %}</h3>
+                            <p class="payment-form-card-text">{{ user.username }}</p>
+                      <h3 class="payment-form-card-title">{% trans 'email : ' %}</h3>
+                            <p class="payment-form-card-text">{{ user.email }}</p>
 
-                </form>
-              </div>
-            </div>
-            <h4 class="my-3">{% trans 'Payment method' %}</h4>
-            <div class="row">
-              <div class="col-md-6">
-                <div id="card" class="card" role="button" onclick="createPaypalSession()">
-                  <div class="card-body text-center">
-                    <p>{% trans 'paypal' %}</p>
-                    <i class="lni lni-paypal-original fs-1"></i>
-                  </div>
-                </div>
-              </div>
-                <div id="pm-stripe" class="col-md-6">
-                  <div class="card" role="button" onclick="createStripeSession()">
-                    <div class="card-body text-center">
-                      <p>{% trans 'credit card' %}</p>
-                      <i class="lni lni-credit-cards fs-1"></i>
-                    </div>
-                  </div>
-                </div>
-              <div class="col-md-12">
-                  <div id="payment-form-container">
-                    <div id="stripe-card" class="card my-3 p-3" style="display: none">
-                      <form id="payment-form">
-                        <div id="payment-element">
-                        </div>
-                        <button id="stripe-submit" class="btn btn-primary mt-3">
-                          {% trans 'pay now' %}
-                        </button>
 
-                      </form>
-                    </div>
-                  </div>
-                  <div id="paypal-card" class="card my-3 p-3" style="display: none">
-                  </div>
-                  </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
+        <div class="payment-form-header">
+            <h1 class="payment-form-title" style="color: brown;">{% trans 'payment information : ' %}</h1>
         </div>
+        <div class="payment-form-body">
+            <div class="col-12">
+                <div class="payment-form-card">
+                    <h3 class="payment-form-card-title">{% trans 'course name : ' %}</h3>
+                    <p class="payment-form-card-text">{{ course.title }}</p>
+                    <h3 class="payment-form-card-title">{% trans 'course price : ' %}</h3>
+                    <p class="payment-form-card-text">${{ course.price }}</p>
+                    <form action="{% url 'create-checkout-session' course.id %}" method="POST" style="margin-top: 20px;">
+                        {% csrf_token %}
+                        <button type="submit" class="payment-form-submit-btn">{% trans 'Subscribe' %}</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+{% else %}
+      <div class="alert alert-info mt-4">
+          {% trans 'Please log in or create an account to view the page' %}
       </div>
+   {% endif %}
+
 {% endblock %}

@@ -23,7 +23,7 @@
                             </a>
                             {% if user == blog.user %}
                             <div class="btn-group float-end">
-                                <a href="{% url 'blog_update' blog.id %}" class="btn btn-sm btn-outline-dark mx-1">تعديل</a>
+                                <a href="{% url 'blog_update' blog.id %}" class="btn btn-sm btn-outline-dark mx-1">{% trans 'edit' %}</a>
                                 <a href="{% url 'blog_delete' blog.id %}" class="btn btn-sm btn-outline-danger">
                                     <i class="bi bi-trash"></i>
                                 </a>

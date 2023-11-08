@@ -9,13 +9,13 @@
       <div class="card">
         <img src="{{ course.image.url }}" class="img-thumbnail" alt="...">
         <div class="card-body">
-          <h5 class="card-title">{% trans 'Course :' %} {{ course.title }}</h5>
-          <p class="card-text">{% trans 'Price : ' %} $ {{ course.price }}</p>
+          <h5 class="card-title">{% trans 'Course : ' %} {{ course.title }}</h5>
+          <p class="card-text">{% trans 'Price : ' %} ${{ course.price }}</p>
           <div class="d-grid gap-2">
             {% if course.id in subscriber %}
               <button class="btn btn-success" disabled>{% trans 'Subscribed' %}</button>
             {% else %}
-              <a href="{% url 'subscribe' course.id %}" class="btn btn-primary">{% trans 'Subscribe' %}</a>
+              <a href="{% url 'checkout' course.id %}" class="btn btn-primary">{% trans 'Subscribe' %}</a>
             {% endif %}
           </div>
         </div>
