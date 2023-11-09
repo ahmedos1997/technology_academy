@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-ss-mk-wxquf9ofmtbjim#tg#+uoy2yoms3*5yb36u$7#c#qun#
 DEBUG = True
 
 ALLOWED_HOSTS = [
-    'https://technology-academy-562efcdaeb1c.herokuapp.com/', '127.0.0.1'
+    'technology-academy-562efcdaeb1c.herokuapp.com/', '127.0.0.1'
 ]
 
 
