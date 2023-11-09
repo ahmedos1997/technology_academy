@@ -9,6 +9,7 @@ gunicorn = "*"
 django = "*"
 psycopg-binary = "*"
 psycopg2-binary = "*"
+stripe = "*"
 
 [dev-packages]
 

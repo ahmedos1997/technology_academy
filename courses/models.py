@@ -1,7 +1,6 @@
 from django.db import models
 from django.conf.global_settings import AUTH_USER_MODEL
 from django.contrib.sessions.models import Session
-from stripe.api_resources.payment_intent import PaymentIntent
 
 
 # Create your models here.
