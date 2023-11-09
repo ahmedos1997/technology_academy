@@ -26,7 +26,8 @@ SECRET_KEY = 'django-insecure-ss-mk-wxquf9ofmtbjim#tg#+uoy2yoms3*5yb36u$7#c#qun#
 DEBUG = True
 
 ALLOWED_HOSTS = [
-        'technology-academy-562efcdaeb1c.herokuapp.com/', '127.0.0.1'
+     '.herokuapp.com', '127.0.0.1'
+        
 ]
 
 
@@ -84,10 +85,10 @@ DATABASES = {
     'default': {
 
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'd4qejgif963hk7',
-        'HOST': 'ec2-44-214-132-149.compute-1.amazonaws.com',
-        'USER': 'atpqixgcwjiavy',
-        'PASSWORD': '168f2ce04b5810406091b55b0d1bb204205f57d74d29b0d5730ab4f4a789df00',
+        'NAME': 'd6atf0ovbri7o4',
+        'HOST': 'ec2-34-252-169-131.eu-west-1.compute.amazonaws.com',
+        'USER': 'cfcuqtmceqnfoy',
+        'PASSWORD': 'be557c74985ea17ab177f8f454b911a044ce17490b8f04f0b75e5c3d643e3c6f',
         'PORT': '5432'
     }
 
