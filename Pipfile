@@ -10,6 +10,7 @@ django = "*"
 psycopg-binary = "*"
 psycopg2-binary = "*"
 stripe = "*"
+pillow = "*"
 
 [dev-packages]
 
