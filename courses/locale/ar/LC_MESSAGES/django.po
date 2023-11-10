@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-11-08 23:03+0200\n"
+"POT-Creation-Date: 2023-11-10 23:56+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -115,7 +115,8 @@ msgid "course price : "
 msgstr "السعر"
 
 #: .\courses\templates\page\checkout.html:34
-#: .\courses\templates\page\main.html:18
+#: .\courses\templates\page\course_view.html:34
+#: .\courses\templates\page\main.html:20
 msgid "Subscribe"
 msgstr "اشتراك"
 
@@ -125,6 +126,33 @@ msgstr "اشتراك"
 #: .\courses\templates\page\success.html:25
 msgid "Please log in or create an account to view the page"
 msgstr "ارجاء تسجيل الدخول او انشاء حساب لتظهر هذه الصفحة"
+
+#: .\courses\templates\page\course_view.html:7
+#, fuzzy
+#| msgid "Course :"
+msgid "Course Details"
+msgstr "كورس"
+
+#: .\courses\templates\page\course_view.html:27
+#, fuzzy
+#| msgid "title"
+msgid "title : "
+msgstr "العنوان"
+
+#: .\courses\templates\page\course_view.html:28
+msgid "description : "
+msgstr ""
+
+#: .\courses\templates\page\course_view.html:29
+#, fuzzy
+#| msgid "Price : "
+msgid "price : "
+msgstr "السعر"
+
+#: .\courses\templates\page\course_view.html:32
+#: .\courses\templates\page\main.html:18
+msgid "Subscribed"
+msgstr "تم الاشتراك"
 
 #: .\courses\templates\page\email.html:40
 #, fuzzy
@@ -148,19 +176,17 @@ msgstr " ايميل الزبون "
 msgid "date : "
 msgstr "التاريخ "
 
-#: .\courses\templates\page\main.html:12
+#: .\courses\templates\page\main.html:13
 #, fuzzy
 #| msgid "Course :"
-msgid "Course : "
+msgid "Course: "
 msgstr "كورس"
 
-#: .\courses\templates\page\main.html:13
-msgid "Price : "
+#: .\courses\templates\page\main.html:15
+#, fuzzy
+#| msgid "Price : "
+msgid "Price: "
 msgstr "السعر"
-
-#: .\courses\templates\page\main.html:16
-msgid "Subscribed"
-msgstr "تم الاشتراك"
 
 #: .\courses\templates\page\my_path.html:5
 msgid "My path"

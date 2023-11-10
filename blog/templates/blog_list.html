@@ -6,17 +6,20 @@
 <html lang="en">
 
 <body>
-    {% if user.is_authenticated %}
 
         <div class="container">
             <div class="row">
                 <div class="col">
+                        {% if user.is_authenticated %}
+
                     <a href="{% url 'blog_create'  %}" class="btn btn-outline-success">
                         <i class="bi bi-plus-lg"></i> {% trans 'Create Blog' %}
                     </a>
+                    {% endif %}
                     <h2 class="mt-4">{% trans 'Blogs' %}</h2>
                     <ul class="list-group">
                         {% for blog in blogs %}
+
                         <li class="list-group-item">
                             <a href="{% url 'blog_view' blog.id %}" style="color: purple; text-decoration: none; font-weight: bold;">
                                 {% trans 'Blog: ' %}: {{ blog.title }}
@@ -38,10 +41,6 @@
             </div>
         </div>
 </body>
-   {% else %}
-      <div class="alert alert-info mt-4">
-          {% trans 'Please log in or create an account to view the page' %}
-      </div>
-      {% endif %}
+
 </html>
 {% endblock %}

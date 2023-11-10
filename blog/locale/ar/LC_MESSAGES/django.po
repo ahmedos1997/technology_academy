@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-11-08 22:55+0200\n"
+"POT-Creation-Date: 2023-11-10 23:56+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -43,34 +43,33 @@ msgstr "هل انت متاكد من عملية الحذف"
 msgid "Delete"
 msgstr "حذف"
 
-#: .\blog\templates\blog_list.html:4 .\blog\templates\blog_list.html:17
+#: .\blog\templates\blog_list.html:4 .\blog\templates\blog_list.html:19
 msgid "Blogs"
 msgstr "المقالات"
 
-#: .\blog\templates\blog_list.html:15
+#: .\blog\templates\blog_list.html:16
 msgid "Create Blog"
 msgstr "انشاء مقالة"
 
-#: .\blog\templates\blog_list.html:22
+#: .\blog\templates\blog_list.html:25
 msgid "Blog: "
 msgstr "مقالة"
 
-#: .\blog\templates\blog_list.html:26
+#: .\blog\templates\blog_list.html:29
 msgid "edit"
 msgstr "تعديل"
 
-#: .\blog\templates\blog_list.html:34
+#: .\blog\templates\blog_list.html:37
 msgid "Sorry, There Are No Blogs To Display "
 msgstr "ناسف لا توجد مدونات لعرضها"
-
-#: .\blog\templates\blog_list.html:43 .\blog\templates\blog_update.html:19
-#: .\blog\templates\blog_view.html:36
-msgid "Please log in or create an account to view the page"
-msgstr "ارجاء تسجيل الدخول او انشاء حساب لتظهر هذه الصفحة"
 
 #: .\blog\templates\blog_update.html:12
 msgid "Update"
 msgstr "تعديل"
+
+#: .\blog\templates\blog_update.html:19
+msgid "Please log in or create an account to view the page"
+msgstr "ارجاء تسجيل الدخول او انشاء حساب لتظهر هذه الصفحة"
 
 #: .\blog\templates\blog_view.html:7
 msgid "Blog Details"
