@@ -156,7 +156,7 @@ STRIPE_PUBLISHABLE_KEY='pk_test_51NNHJNJzhVpZanOUx6KG5yWxRdjzBlGSE6sgiCqkuHwtSxY
 STRIPE_SECRET_KEY='sk_test_51NNHJNJzhVpZanOU4HMMYVti0YAqEwHEtG5NwP9b9nHiFkPpyyohpapDXDxMWF1NupEWhldFp01LHWWo4f4yuYYY000CYIjFkz'
 CURRENCY = 'USD'
 
-BASE_URL = '.herokuapp.com'
+BASE_URL = 'https://technology-academy-a3c4dbcf55d6.herokuapp.com/'
 
 EMAIL_HOST = 'sandbox.smtp.mailtrap.io'
 EMAIL_HOST_USER = 'b3ce6c40823d27'
