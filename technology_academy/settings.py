@@ -85,10 +85,10 @@ DATABASES = {
     'default': {
 
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'd9bc1ip3jqfujd',
-        'HOST': 'ec2-34-242-154-118.eu-west-1.compute.amazonaws.com',
-        'USER': 'usckjqcebzvhsd',
-        'PASSWORD': '8c123cabdb304624040bbe6de0278cd46e8a349399a32cff98fe69fec9ea326c',
+        'NAME': 'd4mma1lnhhe701',
+        'HOST': 'ec2-44-214-132-149.compute-1.amazonaws.com',
+        'USER': 'bvgjhpqymxsxph',
+        'PASSWORD': 'a7afd97be48e26a325a58f341dacaa07698af00b26969007668c60e67c329483',
         'PORT': '5432'
     }
 
@@ -156,7 +156,7 @@ STRIPE_PUBLISHABLE_KEY='pk_test_51NNHJNJzhVpZanOUx6KG5yWxRdjzBlGSE6sgiCqkuHwtSxY
 STRIPE_SECRET_KEY='sk_test_51NNHJNJzhVpZanOU4HMMYVti0YAqEwHEtG5NwP9b9nHiFkPpyyohpapDXDxMWF1NupEWhldFp01LHWWo4f4yuYYY000CYIjFkz'
 CURRENCY = 'USD'
 
-BASE_URL = 'https://technology-academy-f93b209696e9.herokuapp.com'
+BASE_URL = 'https://tec-academy-a2aaee74311a.herokuapp.com'
 
 
 EMAIL_HOST = 'sandbox.smtp.mailtrap.io'
