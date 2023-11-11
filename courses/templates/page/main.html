@@ -4,7 +4,7 @@
 {% block content %}
 <div class="container mt-4">
   <div class="row">
-    {% for course in courses %}
+    {% for course in course %}
     <div class="col-md-4 mb-4">
       <div class="card">
         <img src="{{ course.image.url }}" class="img-thumbnail" alt="...">
@@ -12,7 +12,7 @@
           <a href="{% url 'course_view' course.id %}" style="color: purple; text-decoration: none; font-weight: bold;">
             {% trans 'Course: ' %} {{ course.title }}
           </a>
-          {{ course.description }}
+          {% trans 'course description' %}{{ course.description }}
           <p class="card-text">{% trans 'Price: ' %} ${{ course.price }}</p>
           <div class="d-grid gap-2">
             {% if course.id in subscriber %}
