@@ -85,11 +85,11 @@ DATABASES = {
     'default': {
 
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'd22ht109ntui0t',
-        'HOST': 'ec2-52-215-68-14.eu-west-1.compute.amazonaws.com',
-        'USER': 'vtxgqhhqivzgaa',
-        'PASSWORD': '6a8dd9e92a0b68dd696b3e1e052606100b9e977791c6e1fbdeee7c669a28b111',
-        'PORT': '5432'
+        'NAME': 'dj_technology_academy',
+        'HOST': 'localhost',
+        'USER': 'postgres',
+        'PASSWORD': 'admin',
+        'PORT': ''
     }
 
    }
