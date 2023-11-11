@@ -12,7 +12,6 @@
           <a href="{% url 'course_view' course.id %}" style="color: purple; text-decoration: none; font-weight: bold;">
             {% trans 'Course: ' %} {{ course.title }}
           </a>
-          {% trans 'course description' %}{{ course.description }}
           <p class="card-text">{% trans 'Price: ' %} ${{ course.price }}</p>
           <div class="d-grid gap-2">
             {% if course.id in subscriber %}

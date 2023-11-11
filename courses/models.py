@@ -7,7 +7,7 @@ from django.contrib.sessions.models import Session
 ############# course ######################
 class Course(models.Model):
     title = models.CharField(max_length=255)
-    description = models.TextField(null=True)
+    # description = models.TextField(null=True)
     price = models.IntegerField()
     image = models.ImageField()
     def __str__(self):
