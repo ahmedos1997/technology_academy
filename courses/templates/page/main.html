@@ -9,7 +9,6 @@
       <div class="card">
         <img src="{{ course.image.url }}" class="img-thumbnail" alt="...">
         <div class="card-body">
-          <a href="{% url 'course_view' course.id %}" style="color: purple; text-decoration: none; font-weight: bold;">
             {% trans 'Course: ' %} {{ course.title }}
           </a>
           <p class="card-text">{% trans 'Price: ' %} ${{ course.price }}</p>
