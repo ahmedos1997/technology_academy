@@ -25,6 +25,7 @@ from technology_academy import settings
 
 
 
+<<<<<<< HEAD
 def Course_view(request, id):
     course = Course.objects.get(id=id)
     user = request.user
@@ -36,6 +37,19 @@ def Course_view(request, id):
         'subscriber': subscriber,
     }
     return render(request, 'page/course_view.html', context)
+=======
+# def Course_view(request, id):
+#     course = Course.objects.get(id=id)
+#     user = request.user
+#     subscriber = []
+#     if user.is_authenticated:
+#         subscriber = Subscriber.objects.filter(user=user).values_list('course', flat=True)
+#     context = {
+#         'course': course,
+#         'subscriber': subscriber,
+#     }
+#     return render(request, 'page/course_view.html', context)
+>>>>>>> 388b7f63c731b6bab0c26ba8ece909931725647b
 def CourseListView(request):
     courses = Course.objects.all()
     user = request.user
