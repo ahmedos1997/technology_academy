@@ -9,7 +9,7 @@ from .views import RegisterView
 
 urlpatterns = [
     path('login/', LoginView.as_view(authentication_form=UserLogin), name='login'),
-    path('register/', RegisterView.as_view(), name='register'),
+    path('register', RegisterView.as_view(), name='register'),
     path('profile', views.editprofile, name='profile'),
     path('', include('django.contrib.auth.urls')),
 ]
