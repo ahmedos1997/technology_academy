@@ -21,14 +21,15 @@
 
               <!-- language_selector.html -->
 
-<form action="{% url 'change_language' %}" method="post">
-  {% csrf_token %}
-  <select name="language">
-    <option value="en">{% trans 'English' %}</option>
-    <option value="ar">{% trans 'Arabic' %}</option>
-  </select>
-  <button type="submit">{% trans 'change language' %}</button>
-</form>
+ <form action="{% url 'change_language' language_code='ar' %}" method="post">
+        {% csrf_token %}
+        <button type="submit">{% trans "Change to Arabic" %}</button>
+    </form>
+
+    <form action="{% url 'change_language' language_code='en' %}" method="post">
+        {% csrf_token %}
+        <button type="submit">{% trans "Change to English" %}</button>
+    </form>
 
         </ul>
 
