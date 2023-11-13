@@ -12,6 +12,6 @@ urlpatterns = [
     path('replie_view<int:id>', views.ReplieCreateView, name='replie_view'),
     path('checkout<int:id>', views.checkout, name='checkout'),
     path('success', views.success, name='success'),
-    path('change-language/<str:language_code>/', views.change_language, name='change_language'),
+    path('change-language/', views.change_language, name='change_language'),
     path('create-checkout-session/<pk>', views.CreateCheckoutSessionView.as_view(), name='create-checkout-session')
 ]

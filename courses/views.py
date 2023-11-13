@@ -141,12 +141,14 @@ def success(request):
 def cancel(request):
     return render(request, 'page/cancel.html')
 
-def change_language(request, language_code):
-    activate(language_code)
+from django.shortcuts import redirect
 
-    # قم بأي معالجة إضافية هنا
-
-    return render(request, 'page/main.html')
+def change_language(request):
+    if request.method == 'POST':
+        language = request.POST.get('language')
+        if language in ['en', 'ar']:
+            request.session['language'] = language
+    return redirect(request.META.get('HTTP_REFERER', '/'))
 
 
 def send_order_mail(request, course):
