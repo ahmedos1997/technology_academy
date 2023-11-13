@@ -24,8 +24,8 @@
 
             <form action="{% url 'change_language' language_code='en' %}" method="post">
               <select name="language">
-                <option value="ar">{% Arabic %}</option>
-                <option value="en">{% English %}</option>
+                <option value="ar">{% trans 'Arabic' %}</option>
+                <option value="en">{% trans 'English' %}</option>
               </select>
               <input type="submit" value="{% trans 'Change Language' %}">
             </form>
