@@ -21,14 +21,13 @@
 
               <!-- language_selector.html -->
 
-<form method="post">
-    {% csrf_token %}
-    <select name="language">
-        {% for code, language_name in languages %}
-            <option value="{{ code }}">{{ language_name }}</option>
-        {% endfor %}
-    </select>
-    <button type="submit">Change Language</button>
+<form action="{% url 'change_language' %}" method="post">
+  {% csrf_token %}
+  <select name="language">
+    <option value="en">{% trans 'English' %}</option>
+    <option value="ar">{% trans 'Arabic' %}</option>
+  </select>
+  <button type="submit">{% trans 'change language' %}</button>
 </form>
 
         </ul>
