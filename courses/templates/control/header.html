@@ -21,16 +21,18 @@
 
               <!-- language_selector.html -->
 
- <form action="{% url 'change_language' language_code='ar' %}" method="post">
-        {% csrf_token %}
-        <button type="submit">{% trans "Change to Arabic" %}</button>
-    </form>
+ <form action="{% url 'change_language' %}" method="post">
+  {% csrf_token %}
+  <label for="language-select">{% trans "Select Language" %}:</label>
+  <select name="language" id="language-select">
+    <option value="ar">{% trans "Arabic" %}</option>
+    <option value="en">{% trans "English" %}</option>
+    <!-- أضف المزيد من الخيارات اللغوية حسب الحاجة -->
+  </select>
+  <button type="submit">{% trans "Change Language" %}</button>
+</form>
 
-    <form action="{% url 'change_language' language_code='en' %}" method="post">
-        {% csrf_token %}
-        <button type="submit">{% trans "Change to English" %}</button>
-    </form>
-
+            
         </ul>
 
          {% if user.is_authenticated %}
