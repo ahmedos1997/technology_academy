@@ -146,13 +146,13 @@ def change_language(request):
         language = request.POST.get('language')
         if language:
             request.session['django_language'] = language
-            activate(language)
+            return redirect('main')
     else:
         language = request.session.get('django_language')
         if language:
-            activate(language)
-    return HttpResponseRedirect(reverse('my_path'))
+            return redirect('main')
 
+    return render(request, 'change_language.html', {'languages': LANGUAGES})
 
 def send_order_mail(request, course):
     user = request.user
