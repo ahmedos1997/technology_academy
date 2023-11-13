@@ -21,7 +21,7 @@
 
               <!-- language_selector.html -->
 
- <form action="{% url 'change_language' %}" method="post">
+ <form action="{% url 'change_language' language_code='ar' %}" method="post">
   {% csrf_token %}
   <label for="language-select">{% trans "Select Language" %}:</label>
   <select name="language" id="language-select">
@@ -32,7 +32,7 @@
   <button type="submit">{% trans "Change Language" %}</button>
 </form>
 
-            
+
         </ul>
 
          {% if user.is_authenticated %}
