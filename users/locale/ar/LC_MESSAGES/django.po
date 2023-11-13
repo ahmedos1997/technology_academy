@@ -75,4 +75,4 @@ msgstr "تسجيل الدخول"
 
 #: .\users\templates\registration\register.html:16
 msgid "register"
-msgstr ""
+msgstr "انشاء حساب"
