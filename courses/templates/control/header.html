@@ -2,6 +2,7 @@
 <html lang="en">
 {% load i18n %}
 
+
 <header class="p-3 bg-dark text-white">
     <div class="container">
       <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
@@ -16,17 +17,20 @@
         <li><a href="{% url 'main' %}" class="nav-link px-2 text-secondary">{% trans 'Home' %}</a></li>
         <li><a href="{% url 'my_path' %}" class="nav-link px-2 text-white">{% trans 'my path' %}</a></li>
         <li><a href="{% url 'blog_list' %}" class="nav-link px-2 text-white">{% trans 'Blog' %}</a></li>
-        </ul>
 
-        <!-- language_selector.html -->
-        <form action="{% url 'change_language' %}" method="post">
-          {% csrf_token %}
-          <select name="language">
-            <option value="en">{% trans 'English' %}</option>
-            <option value="ar">{% trans 'Arabic' %}</option>
-          </select>
-          <button type="submit">{% trans 'change language' %}</button>
-        </form>
+
+              <!-- language_selector.html -->
+
+<form action="{% url 'change_language' %}" method="post">
+  {% csrf_token %}
+  <select name="language">
+    <option value="en">{% trans 'English' %}</option>
+    <option value="ar">{% trans 'Arabic' %}</option>
+  </select>
+  <button type="submit">{% trans 'change language' %}</button>
+</form>
+
+        </ul>
 
          {% if user.is_authenticated %}
             <ul class="navbar-nav mb-2 mb-lg-0 me-3">
