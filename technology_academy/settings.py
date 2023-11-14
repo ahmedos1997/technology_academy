@@ -23,7 +23,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-ss-mk-wxquf9ofmtbjim#tg#+uoy2yoms3*5yb36u$7#c#qun#'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = [
      '.herokuapp.com', '127.0.0.1'
@@ -120,8 +120,8 @@ AUTH_PASSWORD_VALIDATORS = [
 LANGUAGE_CODE = 'ar'
 
 LANGUAGES = (
-    ('ar', ('Arabic')),
     ('en', ('English')),
+    ('ar', ('Arabic')),
 )
 LOCALE_PATHS = [
     os.path.join(BASE_DIR, 'locale'),
