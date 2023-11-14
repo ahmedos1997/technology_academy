@@ -120,8 +120,8 @@ AUTH_PASSWORD_VALIDATORS = [
 LANGUAGE_CODE = 'ar'
 
 LANGUAGES = (
-    ('en', ('English')),
     ('ar', ('Arabic')),
+    ('en', ('English')),
 )
 LOCALE_PATHS = [
     os.path.join(BASE_DIR, 'locale'),
