@@ -21,16 +21,18 @@
 
               <!-- language_selector.html -->
 
-<form action="{% url 'change_language' %}" method="post">
+<!-- استخدام متغير django_language لتحديد لغة القالب -->
+{% get_current_language as language %}
+{% get_available_languages as languages %}
+<form method="post" action="{% url 'change_language' %}">
   {% csrf_token %}
   <select name="language">
-    <option value="en">{% trans 'English' %}</option>
-    <option value="ar">{% trans 'Arabic' %}</option>
+    {% for lang_code, lang_name in languages %}
+      <option value="{{ lang_code }}" {% if language == lang_code %}selected{% endif %}>{{ lang_name }}</option>
+    {% endfor %}
   </select>
-  <button type="submit">{% trans 'change language' %}</button>
+  <button type="submit">تغيير اللغة</button>
 </form>
-
-        </ul>
 
          {% if user.is_authenticated %}
             <ul class="navbar-nav mb-2 mb-lg-0 me-3">
