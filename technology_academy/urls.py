@@ -25,5 +25,6 @@ urlpatterns = [
 
     path('', include('courses.urls')),
     path('blog', include('blog.urls')),
-    path('users/', include('users.urls'))
+    path('users/', include('users.urls')),
+    path('i18n/', include('django.conf.urls.i18n')),
 ]  + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

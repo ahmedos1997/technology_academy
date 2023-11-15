@@ -21,14 +21,19 @@
 
               <!-- language_selector.html -->
 
-<form action="{% url 'change_language' %}" method="post">
-  {% csrf_token %}
-  <select name="language">
-    <option value="en">{% trans 'English' %}</option>
-    <option value="ar">{% trans 'Arabic' %}</option>
-  </select>
-  <button type="submit">{% trans 'change language' %}</button>
-</form>
+<form action="{% url 'set_language' %}" method="post">{% csrf_token %}
+     <select name="language">
+        {% get_current_language as LANGUAGE_CODE %}
+        {% get_available_languages as LANGUAGES %}
+        {% get_language_info_list for LANGUAGES as languages %}
+        {% for language in languages %}
+          <option value="{{ language.code }}"{% if language.code == LANGUAGE_CODE %} selected{% endif %}>
+              {{ language.name_local }} ({{ language.code }})
+          </option>
+        {% endfor %}
+     </select>
+     <input type="submit" value="Go">
+ </form>
 
         </ul>
 
