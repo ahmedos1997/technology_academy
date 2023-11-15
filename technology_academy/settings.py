@@ -23,7 +23,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-ss-mk-wxquf9ofmtbjim#tg#+uoy2yoms3*5yb36u$7#c#qun#'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = [
      '.herokuapp.com', '127.0.0.1'
@@ -85,11 +85,11 @@ DATABASES = {
     'default': {
 
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'dc37fhbvmc5prd',
-        'HOST': 'ec2-34-195-81-92.compute-1.amazonaws.com',
-        'USER': 'kmmzuwssicgdzt',
-        'PASSWORD': '20b6845f478951cac8582d5660326b4681af613d1f1433e421946aa5f64f6c34',
-        'PORT': '5432'
+        'NAME': 'dj_technology_academy',
+        'HOST': 'localhost',
+        'USER': 'postgres',
+        'PASSWORD': 'admin',
+        'PORT': ''
     }
 
    }
