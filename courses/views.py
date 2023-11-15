@@ -148,7 +148,7 @@ def change_language(request, language_code):
     # تفعيل اللغة الجديدة
     activate(language_code)
 
-    return render(request, 'change_language.html')
+    return render(request, 'control/header.html')
 
 
 def send_order_mail(request, course):

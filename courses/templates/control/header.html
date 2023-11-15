@@ -21,7 +21,17 @@
 
               <!-- language_selector.html -->
 
+<form action="{% url 'change_language' %}" method="post">
+    {% csrf_token %}
 
+    <select name="language_code">
+        {% for language_code, language_name in LANGUAGES %}
+            <option value="{{ language_code }}">{{ language_name }}</option>
+        {% endfor %}
+    </select>
+
+    <input type="submit" value="{{ _('حفظ') }}" />
+</form>
 
         </ul>
 
