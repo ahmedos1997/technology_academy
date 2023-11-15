@@ -141,17 +141,19 @@ def success(request):
 def cancel(request):
     return render(request, 'page/cancel.html')
 
+
 def change_language(request):
     if request.method == 'POST':
         language = request.POST.get('language')
         if language:
             request.session['django_language'] = language
-            activate(language)
     else:
         language = request.session.get('django_language')
-        if language:
-            activate(language)
-    return HttpResponseRedirect(reverse('herokuapp.com'))
+
+    if 'next' in request.GET:
+        return redirect(request.GET['next'])
+
+    return redirect('herokuapp.com')
 
 
 def send_order_mail(request, course):
