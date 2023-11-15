@@ -141,7 +141,7 @@ msgstr "العنوان"
 
 #: .\courses\templates\page\course_view.html:28
 msgid "description : "
-msgstr ""
+msgstr "الشرح"
 
 #: .\courses\templates\page\course_view.html:29
 #, fuzzy
