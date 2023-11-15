@@ -146,17 +146,21 @@ from django.http import HttpResponseRedirect
 from django.urls import reverse
 from django.utils.translation import activate
 
+from django.shortcuts import render
+from django.http import HttpResponseRedirect
+from django.urls import reverse
+from django.utils import translation
+
 def change_language(request):
     if request.method == 'POST':
         language = request.POST.get('language')
         if language:
-            request.session['django_language'] = language
-            activate(language)
-            request.session.modified = True  # قم بتعيين الجلسة كمعدّلة
+            translation.activate(language)
+            request.session[translation.LANGUAGE_SESSION_KEY] = language
     else:
-        language = request.session.get('django_language')
+        language = request.session.get(translation.LANGUAGE_SESSION_KEY)
         if language:
-            activate(language)
+            translation.activate(language)
     return HttpResponseRedirect(reverse('main'))
 
 
