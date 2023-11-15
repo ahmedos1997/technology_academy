@@ -141,17 +141,14 @@ def success(request):
 def cancel(request):
     return render(request, 'page/cancel.html')
 
-def change_language(request):
-    if request.method == 'POST':
-        language = request.POST.get('language')
-        if language:
-            request.session['django_language'] = language
-            activate(language)
-    else:
-        language = request.session.get('django_language')
-        if language:
-            activate(language)
-    return HttpResponseRedirect(reverse('main'))
+def change_language(request, language_code):
+    # حفظ اللغة الجديدة في الجلسة
+    request.session['django_language'] = language_code
+
+    # تفعيل اللغة الجديدة
+    activate(language_code)
+
+    return render(request, 'change_language.html')
 
 
 def send_order_mail(request, course):
