@@ -11,6 +11,8 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 """
 import os
 from pathlib import Path
+from django.utils.translation import gettext_lazy as _
+
 # from locale import gettext
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -119,10 +121,11 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'ar'
 
-LANGUAGES = (
-    ('en', ('English')),
-    ('ar', ('Arabic')),
-)
+LANGUAGES = [
+    ('en', _('English')),
+    ('ar', _('Arabic')),
+    # ...
+]
 LOCALE_PATHS = [
     os.path.join(BASE_DIR, 'locale'),
 ]

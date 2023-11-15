@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-11-10 23:56+0200\n"
+"POT-Creation-Date: 2023-11-16 00:40+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -24,7 +24,6 @@ msgid "title"
 msgstr "العنوان"
 
 #: .\courses\templates\control\base.html:5
-#: .\courses\templates\control\header.html:13
 msgid "Technology Academy"
 msgstr "اكادمية التقانة"
 
@@ -32,45 +31,37 @@ msgstr "اكادمية التقانة"
 msgid "(c) 2022 tecnology. All Right reserved."
 msgstr "الحقوق محفوظة للاكادمية (c) 2022"
 
-#: .\courses\templates\control\header.html:14
+#: .\courses\templates\control\header.html:17
 msgid "Home"
 msgstr "الرئيسية"
 
-#: .\courses\templates\control\header.html:15
+#: .\courses\templates\control\header.html:18
 msgid "my path"
 msgstr "مساراتي"
 
-#: .\courses\templates\control\header.html:16
+#: .\courses\templates\control\header.html:19
 msgid "Blog"
 msgstr "المدونات"
 
-#: .\courses\templates\control\header.html:24
-msgid "English"
-msgstr "اللغة الانجليزية"
-
-#: .\courses\templates\control\header.html:25
-msgid "Arabic"
-msgstr "اللغة العربية"
-
-#: .\courses\templates\control\header.html:27
+#: .\courses\templates\control\header.html:35
 #, fuzzy
 #| msgid "Choose the language"
 msgid "change language"
 msgstr "اختر اللغة"
 
-#: .\courses\templates\control\header.html:39
+#: .\courses\templates\control\header.html:47
 msgid "Profile"
 msgstr "الصفحة الشخصية"
 
-#: .\courses\templates\control\header.html:41
+#: .\courses\templates\control\header.html:49
 msgid "Logout"
 msgstr "تسجيل خروج"
 
-#: .\courses\templates\control\header.html:58
+#: .\courses\templates\control\header.html:55
 msgid "Login"
 msgstr "تسجيل الدخول"
 
-#: .\courses\templates\control\header.html:59
+#: .\courses\templates\control\header.html:56
 msgid "Register"
 msgstr "انشاء حساب"
 
@@ -115,8 +106,8 @@ msgid "course price : "
 msgstr "السعر"
 
 #: .\courses\templates\page\checkout.html:34
-#: .\courses\templates\page\course_view.html:34
-#: .\courses\templates\page\main.html:20
+#: .\courses\templates\page\course_view.html:19
+#: .\courses\templates\page\main.html:21
 msgid "Subscribe"
 msgstr "اشتراك"
 
@@ -127,30 +118,24 @@ msgstr "اشتراك"
 msgid "Please log in or create an account to view the page"
 msgstr "ارجاء تسجيل الدخول او انشاء حساب لتظهر هذه الصفحة"
 
-#: .\courses\templates\page\course_view.html:7
-#, fuzzy
-#| msgid "Course :"
-msgid "Course Details"
-msgstr "كورس"
-
-#: .\courses\templates\page\course_view.html:27
+#: .\courses\templates\page\course_view.html:12
 #, fuzzy
 #| msgid "title"
 msgid "title : "
 msgstr "العنوان"
 
-#: .\courses\templates\page\course_view.html:28
+#: .\courses\templates\page\course_view.html:13
 msgid "description : "
 msgstr "الشرح"
 
-#: .\courses\templates\page\course_view.html:29
+#: .\courses\templates\page\course_view.html:14
 #, fuzzy
 #| msgid "Price : "
 msgid "price : "
 msgstr "السعر"
 
-#: .\courses\templates\page\course_view.html:32
-#: .\courses\templates\page\main.html:18
+#: .\courses\templates\page\course_view.html:17
+#: .\courses\templates\page\main.html:19
 msgid "Subscribed"
 msgstr "تم الاشتراك"
 
@@ -176,13 +161,7 @@ msgstr " ايميل الزبون "
 msgid "date : "
 msgstr "التاريخ "
 
-#: .\courses\templates\page\main.html:13
-#, fuzzy
-#| msgid "Course :"
-msgid "Course: "
-msgstr "كورس"
-
-#: .\courses\templates\page\main.html:15
+#: .\courses\templates\page\main.html:16
 #, fuzzy
 #| msgid "Price : "
 msgid "Price: "
@@ -230,6 +209,22 @@ msgstr ""
 #: .\courses\templates\page\success.html:18
 msgid "Go to courses"
 msgstr "الذهاب الى صفحة الكورسات"
+
+#~ msgid "English"
+#~ msgstr "اللغة الانجليزية"
+
+#~ msgid "Arabic"
+#~ msgstr "اللغة العربية"
+
+#, fuzzy
+#~| msgid "Course :"
+#~ msgid "Course Details"
+#~ msgstr "كورس"
+
+#, fuzzy
+#~| msgid "Course :"
+#~ msgid "Course: "
+#~ msgstr "كورس"
 
 #, fuzzy
 #~| msgid "Course :"
