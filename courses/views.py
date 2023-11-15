@@ -153,7 +153,7 @@ def change_language(request):
     if 'next' in request.GET:
         return redirect(request.GET['next'])
 
-    return redirect('herokuapp.com')
+    return redirect('main')
 
 
 def send_order_mail(request, course):
