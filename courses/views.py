@@ -151,14 +151,19 @@ from django.http import HttpResponseRedirect
 from django.urls import reverse
 from django.utils import translation
 
+from django.shortcuts import render
+from django.http import HttpResponseRedirect
+from django.urls import reverse
+from django.utils import translation
+
 def change_language(request):
     if request.method == 'POST':
         language = request.POST.get('language')
         if language:
             translation.activate(language)
-            request.session[translation.LANGUAGE_SESSION_KEY] = language
+            request.session['django_language'] = language
     else:
-        language = request.session.get(translation.LANGUAGE_SESSION_KEY)
+        language = request.session.get('django_language')
         if language:
             translation.activate(language)
     return HttpResponseRedirect(reverse('main'))
