@@ -141,32 +141,17 @@ def success(request):
 def cancel(request):
     return render(request, 'page/cancel.html')
 
-from django.shortcuts import render
-from django.http import HttpResponseRedirect
-from django.urls import reverse
-from django.utils.translation import activate
-
-from django.shortcuts import render
-from django.http import HttpResponseRedirect
-from django.urls import reverse
-from django.utils import translation
-
-from django.shortcuts import render
-from django.http import HttpResponseRedirect
-from django.urls import reverse
-from django.utils import translation
-
 def change_language(request):
     if request.method == 'POST':
         language = request.POST.get('language')
         if language:
-            translation.activate(language)
             request.session['django_language'] = language
+            activate(language)
     else:
         language = request.session.get('django_language')
         if language:
-            translation.activate(language)
-    return HttpResponseRedirect(reverse('main'))
+            activate(language)
+    return HttpResponseRedirect(reverse('my_path'))
 
 
 def send_order_mail(request, course):
